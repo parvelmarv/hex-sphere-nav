@@ -50,25 +50,3 @@ Each frame:
 
 ### 3. Input (`BuildController` / `InputManager`)
 `InputManager` is a singleton owning the generated `PlayerInputsystem` and exposes `SetInputMode(InputMode)` to enable one action map at a time. `BuildController` subscribes to the `PlanetBuilder` map and surfaces `Move`, `Look`, and `ZoomInput` as properties.
-
----
-
-## Dependencies
-
-| Package | Used by |
-|---|---|
-| Unity Input System (`com.unity.inputsystem`) | `InputManager`, `BuildController`, `PlayerInputsystem.inputactions` |
-| Unity `MeshFilter` | `PlanetGraph` — attach to any sphere mesh |
-
----
-
-## Quick setup
-
-1. Install **Input System** package via Package Manager.
-2. Drop `Code/` and `Settings/` into your `Assets/` folder.
-3. Select `PlayerInputsystem.inputactions` → **Generate C# Class**.
-4. Add `PlanetGraph` to a sphere GameObject.
-5. Add `InputManager` to an empty GameObject (set default mode to `Building`).
-6. Add `BuildController` to another empty GameObject.
-7. Add `PlanetGridSelector`, assign the `PlanetGraph` and an optional `selectionVisualPrefab`.
-8. Press Play, navigate with a gamepad's left stick.
